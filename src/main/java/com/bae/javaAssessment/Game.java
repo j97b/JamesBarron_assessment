@@ -66,8 +66,10 @@ public class Game {
 		case "w":
 			object.setXCoord(object.getXCoord() - 1);
 			return object;
+		default:
+			System.out.println("Try North, South, East, West");
+			return object;
 		}
-		return object;
 	}
 
 	public double goalDistance(Object player, Object goal) {

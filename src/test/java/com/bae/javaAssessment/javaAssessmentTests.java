@@ -33,19 +33,39 @@ public class javaAssessmentTests {
 		player.setXCoord(0);
 		player.setYCoord(0);
 		game.takeStep("north", player);
-		Assert.assertTrue(1 == player.getYCoord());
+		Assert.assertTrue(0 == player.getXCoord() && 1 == player.getYCoord());
 		player.setXCoord(0);
 		player.setYCoord(0);
 		game.takeStep("EAst", player);
-		Assert.assertTrue(1 == player.getXCoord());
+		Assert.assertTrue(1 == player.getXCoord() && 0 == player.getYCoord());
 		player.setXCoord(0);
 		player.setYCoord(0);
 		game.takeStep("South", player);
-		Assert.assertTrue(-1 == player.getYCoord());
+		Assert.assertTrue(0 == player.getXCoord() && -1 == player.getYCoord());
 		player.setXCoord(0);
 		player.setYCoord(0);
 		game.takeStep("WEST", player);
-		Assert.assertTrue(-1 == player.getXCoord());
+		Assert.assertTrue(-1 == player.getXCoord() && 0 == player.getYCoord());
+		player.setXCoord(0);
+		player.setYCoord(0);
+		game.takeStep("n", player);
+		Assert.assertTrue(0 == player.getXCoord() && 1 == player.getYCoord());
+		player.setXCoord(0);
+		player.setYCoord(0);
+		game.takeStep("E", player);
+		Assert.assertTrue(1 == player.getXCoord() && 0 == player.getYCoord());
+		player.setXCoord(0);
+		player.setYCoord(0);
+		game.takeStep("s", player);
+		Assert.assertTrue(0 == player.getXCoord() && -1 == player.getYCoord());
+		player.setXCoord(0);
+		player.setYCoord(0);
+		game.takeStep("W", player);
+		Assert.assertTrue(-1 == player.getXCoord() && 0 == player.getYCoord());
+		player.setXCoord(0);
+		player.setYCoord(0);
+		game.takeStep("I can't follow simple instructions", player);
+		Assert.assertTrue(0 == player.getXCoord() && 0 == player.getYCoord());
 	}
 	
 	@Test
