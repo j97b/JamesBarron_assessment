@@ -10,6 +10,7 @@ public class javaAssessmentTests {
 	Game game = new Game();
 	Object goal = new Object();
 	Object player = new Object();
+	Object demogorgon = new Object();
 	
 	@Test
 	public void setGoalTest() {
@@ -80,13 +81,14 @@ public class javaAssessmentTests {
 	
 	@Test
 	public void introTest() {
-		Assert.assertEquals("~~~~~Welcome to the game~~~~~\n" +
-				"Grey foggy clouds float oppressively close to you,\n" +
-				"reflected in the murky grey water which reaches up your shins.\n" + 
-				"Some black plants barely poke out of the shallow water.\n" + 
-				"Try \"north\", \"south\", \"east\", or \"west\"\n" +
-				"You notice a small watch-like device in your left hand.\n" +
-				"It has hands like a watch, but the hands don't seem to tell time.", game.intro());
+		Assert.assertEquals("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Welcome to the game~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n" + 
+						       "      You are in the Upside Down. The demogorgon knows you are here, and\n" + 
+							   "           is hunting you down. The only way out is to find the exit.\n" + 
+							   "     Luckily, you have a device in your hand that tells you how far away\n" + 
+							   "  the exit is in a straight line. It also shows how far away the demogorgon is.\n" + 
+							   "   Try \"North\", \"South\", \"East\" or \"West\". If the demogorgon reaches the exit\n" + 
+							   " before you do, you will be trapped here forever. If the demogorgon reaches you\n" + 
+							   "                before you reach the exit, you will be devoured.\n" + 
+							   "                                 Good luck.", game.intro());
 	}
-
 }
