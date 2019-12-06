@@ -109,6 +109,26 @@ public class Game {
 			return object;
 		}
 	}
+	
+
+	public String randomStep() {
+		String s = "north";
+		switch (rand.nextInt(4)) {
+		case 0:
+			s = "north";
+			return s;
+		case 1:
+			s = "south";
+			return s;
+		case 2:
+			s = "east";
+			return s;
+		case 3:
+			s = "west";
+			return s;
+		}
+		return s;
+	}
 
 	public double goalDistance(Object player, Object goal) {
 		int xDist = player.getXCoord() - goal.getXCoord();
@@ -130,48 +150,34 @@ public class Game {
 
 	public void start() {
 		scan = new Scanner(System.in);
+		boolean play = true;
+		while (play = true) {
 		Object goal = new Object();
 		Object player = new Object();
 		Object demogorgon = new Object();
 		setGoal(goal);
-		setDemogorgon(demogorgon);
+		setDemogorgon(demogorgon);	
 		player.setXCoord(0);
 		player.setYCoord(0);
 		System.out.print(intro() + "\n\n");
-		playGame(player, goal, demogorgon);
+		playGame(player, goal, demogorgon, play);
+		}
 		scan.close();
 	}
 
-	private void playRound(Object player, Object goal, Object demogorgon) {
-		System.out.print("The device reads: \'" + df.format(goalDistance(player, goal)) + "m\'\nThe demogorgon is " + df.format(goalDistance(player, demogorgon)) + " metres away\n>");
+	private void playRound(Object player, Object goal, Object demogorgon, boolean play) {
+		System.out.print("The device reads: \'" + df.format(goalDistance(player, goal)) + "m\'\nThe demogorgon is "
+				+ df.format(goalDistance(player, demogorgon)) + " metres away\n>");
 		String step = scan.nextLine();
 		takeStep(step, player);
 		takeStep(randomStep(), demogorgon);
 		checkWin(player, goal);
 	}
-	
-	private String randomStep() {
-		String s = "";
-		switch (rand.nextInt(4)) {
-		case 0:
-			s = "north";
-			return s;
-		case 1:
-			s = "south";
-			return s;
-		case 2:
-			s = "east";
-			return s;
-		case 3:
-			s = "west";
-			return s;
-		}
-		return s;
-	}
 
-	private void playGame(Object player, Object goal, Object demogorgon) {
+
+	private void playGame(Object player, Object goal, Object demogorgon, boolean play) {
 		do {
-			playRound(player, goal, demogorgon);
+			playRound(player, goal, demogorgon, play);
 		} while (checkWin(player, goal) == false && checkDemogorgon(demogorgon, goal) == false
 				&& checkDead(demogorgon, player) == false);
 		if (checkDead(demogorgon, player) == true) {
@@ -180,6 +186,10 @@ public class Game {
 			System.out.println("The demogorgon is at the exit, you can't escape.\nYou slowly starve to death");
 		} else {
 			System.out.println("Congratulations, you found the goal!");
+		}
+		System.out.println("Enter anything to play again");
+		if (!scan.nextLine().equalsIgnoreCase("y")) {
+			play = false;
 		}
 	}
 }

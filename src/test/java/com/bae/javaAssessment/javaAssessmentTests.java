@@ -30,6 +30,28 @@ public class javaAssessmentTests {
 	}
 	
 	@Test
+	public void checkDemogorgonTest() {
+		demogorgon.setXCoord(4);
+		demogorgon.setYCoord(7);
+		goal.setXCoord(4);
+		goal.setYCoord(7);
+		Assert.assertTrue(game.checkDemogorgon(demogorgon, goal));
+		goal.setXCoord(3);
+		Assert.assertFalse(game.checkDemogorgon(demogorgon, goal));
+	}
+	
+	@Test
+	public void checkDeadTest() {
+		player.setXCoord(4);
+		player.setYCoord(7);
+		demogorgon.setXCoord(4);
+		demogorgon.setYCoord(7);
+		Assert.assertTrue(game.checkDead(player, demogorgon));
+		player.setXCoord(3);
+		Assert.assertFalse(game.checkDead(player, demogorgon));
+	}
+	
+	@Test
 	public void takeStepTest() {
 		player.setXCoord(0);
 		player.setYCoord(0);
@@ -70,7 +92,7 @@ public class javaAssessmentTests {
 	}
 	
 	@Test
-	public void goalDistanceTest() {
+	public void goalDistanceTest() {	
 		player.setXCoord(4);
 		player.setYCoord(7);
 		goal.setXCoord(8);
@@ -90,5 +112,10 @@ public class javaAssessmentTests {
 							   " before you do, you will be trapped here forever. If the demogorgon reaches you\n" + 
 							   "                before you reach the exit, you will be devoured.\n" + 
 							   "                                 Good luck.", game.intro());
+	}
+	
+	@Test
+	public void randomStepTest() {
+		Assert.assertFalse(!game.randomStep().equals("north") && !game.randomStep().equals("south") && !game.randomStep().equals("east") && !game.randomStep().equals("west"));
 	}
 }
