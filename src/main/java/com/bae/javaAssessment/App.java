@@ -3,7 +3,8 @@ package com.bae.javaAssessment;
 public class App {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		Game game = new Game();
+		System.out.println(game.intro());
 
 	}
 
