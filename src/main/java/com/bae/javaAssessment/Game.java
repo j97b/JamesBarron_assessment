@@ -13,20 +13,20 @@ public class Game {
 	public Object setGoal(Object goal) {
 		switch (rand.nextInt(4)) {
 		case 0:
-			goal.setXCoord(rand.nextInt(5) + 5);
-			goal.setYCoord(rand.nextInt(5) + 5);
+			goal.setXCoord(rand.nextInt(10) + 5);
+			goal.setYCoord(rand.nextInt(10) + 5);
 			return goal;
 		case 1:
-			goal.setXCoord(rand.nextInt(5) + 5);
-			goal.setYCoord(-(rand.nextInt(5) + 5));
+			goal.setXCoord(rand.nextInt(10) + 5);
+			goal.setYCoord(-(rand.nextInt(10) + 5));
 			return goal;
 		case 2:
-			goal.setXCoord(-(rand.nextInt(5) + 5));
-			goal.setYCoord(rand.nextInt(5) + 5);
+			goal.setXCoord(-(rand.nextInt(10) + 5));
+			goal.setYCoord(rand.nextInt(10) + 5);
 			return goal;
 		case 3:
-			goal.setXCoord(-(rand.nextInt(5) + 5));
-			goal.setYCoord(-(rand.nextInt(5) + 5));
+			goal.setXCoord(-(rand.nextInt(10) + 5));
+			goal.setYCoord(-(rand.nextInt(10) + 5));
 			return goal;
 		}
 		return goal;
@@ -35,20 +35,20 @@ public class Game {
 	public Object setDemogorgon(Object demogorgon) {
 		switch (rand.nextInt(4)) {
 		case 0:
-			demogorgon.setXCoord(rand.nextInt(1) + 5);
-			demogorgon.setYCoord(rand.nextInt(1) + 5);
+			demogorgon.setXCoord(rand.nextInt(10));
+			demogorgon.setYCoord(rand.nextInt(10));
 			return demogorgon;
 		case 1:
-			demogorgon.setXCoord(rand.nextInt(1) + 5);
-			demogorgon.setYCoord(-(rand.nextInt(1) + 5));
+			demogorgon.setXCoord(rand.nextInt(10));
+			demogorgon.setYCoord(-(rand.nextInt(10)));
 			return demogorgon;
 		case 2:
-			demogorgon.setXCoord(-(rand.nextInt(1) + 5));
-			demogorgon.setYCoord(rand.nextInt(1) + 5);
+			demogorgon.setXCoord(-(rand.nextInt(10)));
+			demogorgon.setYCoord(rand.nextInt(10));
 			return demogorgon;
 		case 3:
-			demogorgon.setXCoord(-(rand.nextInt(1) + 5));
-			demogorgon.setYCoord(-(rand.nextInt(1) + 5));
+			demogorgon.setXCoord(-(rand.nextInt(10)));
+			demogorgon.setYCoord(-(rand.nextInt(10)));
 			return demogorgon;
 		}
 		return demogorgon;
