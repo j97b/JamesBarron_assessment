@@ -1,7 +1,5 @@
 package com.bae.javaAssessment;
 
-import java.util.Arrays;
-
 public class Object {
 	
 	int xCoord;

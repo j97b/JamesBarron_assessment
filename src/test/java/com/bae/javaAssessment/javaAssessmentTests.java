@@ -97,7 +97,7 @@ public class javaAssessmentTests {
 		player.setYCoord(7);
 		goal.setXCoord(8);
 		goal.setYCoord(13);
-		double distance = game.goalDistance(player, goal);
+		double distance = game.getDistance(player, goal);
 		Assert.assertTrue(Math.hypot(4, 6) == distance);
 	}
 	
